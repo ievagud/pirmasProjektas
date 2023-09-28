@@ -3,7 +3,7 @@
 
 double mediana(const vector<double>& sk) {
     if (sk.empty()) {
-        return 0.0;
+        return 0;
     }
 
     vector<double> isrusiuota = sk;
@@ -27,23 +27,24 @@ studentas ivesk(){
         return temp;
     }
 
+
     cout << "Iveskite pavarde: ";
     cin >> temp.pavarde;
 
 
-    int pazymys;
+    double pazymys;
     cout << "Ar norite sugeneruoti atsitiktinius pazymius? (1 - Taip, 0 - Ne): ";
-    int generateRandomPazymiai;
-    cin >> generateRandomPazymiai;
+    double rand_pazymiai;
+    cin >> rand_pazymiai;
 
-    if (generateRandomPazymiai == 1) {
+    if (rand_pazymiai == 1) {
         srand(time(0));
-        int numRandomPazymiai = rand() % 11;
-        cout << "Sugeneruoti pazymiai: ";
-        for (int i = 0; i < numRandomPazymiai; ++i) {
-            int randomPazymys = rand() % 11;
-            temp.pazymiai.push_back(randomPazymys);
-            cout << randomPazymys << " ";
+        int rand_pazymiu_sk = rand() % 11;
+        cout << "Sugeneruoti atsitiktiniai pazymiai: ";
+        for (int i = 0; i < rand_pazymiu_sk; ++i) {
+            int rand_pazymys = rand() % 11;
+            temp.pazymiai.push_back(rand_pazymys);
+            cout << rand_pazymys << " ";
         }
 
         srand(time(0));
@@ -52,14 +53,40 @@ studentas ivesk(){
         cout << "\n";
 
     } else {
-        cout << "Iveskite namu darbu rezultatus (iveskite -1, jei norite baigti): ";
-        while (true) {
-            cin >> pazymys;
-            if (pazymys == -1) {
-                break;
-            }
-            temp.pazymiai.push_back(pazymys);
+
+       while (true) {
+            cout << "Iveskite pazymi (nuo 0 iki 10, iveskite -1, jei norite baigti ivedima ): ";
+
+            if (cin >> pazymys) {
+                if (pazymys == -1) {
+                    break;
+                }
+
+                if (pazymys >= 0 && pazymys <= 10) {
+                    temp.pazymiai.push_back(pazymys);
+                } else {
+                    cout << "Ivestas pazymys netinkamas!" << endl;
+                    }
+            } else {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Ivestas pazymys netinkamas!" << endl;
+                }
         }
+
+        double egz;
+        cout << "Iveskite egzamino pazymi (0-10): ";
+        while (true) {
+            if (cin >> egz && egz >= 0 && egz <= 10) {
+                break;
+            } else {
+                cout << "Ivestas pazymys netinkamas! Iveskite pazymi (0-10): ";
+                cin.clear();
+                cin.ignore(1000, '\n');
+            }
+        }
+
+
     }
 
     double nd_suma = 0;
