@@ -135,7 +135,35 @@ studentas nuskaityk() {
             cerr << "Nepavyko atidaryti failo" << endl;
             }
 
-        string line;
+
+            string line;
+    getline(kursiokaitxt, line);
+    stringstream line_stream(line);
+    string element;
+    int num = 0;
+    while (line_stream >> element) {
+        num++;
+    }
+    num = num-3;
+    while (getline(kursiokaitxt, line)) {
+        studentas Studentas;
+        stringstream ss(line);
+        ss >> Studentas.vardas >> Studentas.pavarde;
+        for (int i = 1; i <= num; i++) {
+            int pazymys;
+            if (ss >> pazymys) {
+                Studentas.pazymiai.push_back(pazymys);
+            }
+        }
+        ss >> Studentas.egzaminas;
+        double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
+        Studentas.rez_med = galutinis;
+        double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
+        Studentas.rez_vid = galutinis1;
+        grupe.push_back(Studentas);
+    }
+
+        /*string line;
         getline(kursiokaitxt, line);
         while (getline(kursiokaitxt, line)) {
             studentas Studentas;
@@ -155,7 +183,7 @@ studentas nuskaityk() {
             Studentas.rez_vid = galutinis1;
             grupe.push_back(Studentas);
 
-        }
+        }*/
 
         sort(grupe.begin(), grupe.end(), [](const studentas& a, const studentas& b) {
             if (a.vardas != b.vardas) {
