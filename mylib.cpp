@@ -128,7 +128,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
         cout << string(50,'-') << endl;
     }
 
-/*studentas nuskaityk() {
+studentas nuskaityk() {
     vector<studentas> grupe;
         ifstream kursiokaitxt("kursiokai.txt");
         if (!kursiokaitxt.is_open()) {
@@ -174,53 +174,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
     }
     cout << string(70, '-') << endl;
 
-}*/
-
-studentas nuskaityk() {
-    vector<studentas> grupe;
-    ifstream kursiokaitxt("kursiokai.txt");
-
-    if (!kursiokaitxt.is_open()) {
-        cerr << "Nepavyko atidaryti failo" << endl;
-    }
-
-    string line;
-    getline(kursiokaitxt, line);
-    while (getline(kursiokaitxt, line)) {
-        studentas Studentas;
-        stringstream ss(line);
-        ss >> Studentas.vardas >> Studentas.pavarde;
-
-        for (int i = 1; i <= 15; i++) {
-            int pazymys;
-            if (ss >> pazymys) {
-                // Check if pazymys is a valid number
-                if (ss.fail()) {
-                    cerr << "Error reading student grade: Invalid number format" << endl;
-                    // Handle the error as needed
-                } else {
-                    Studentas.pazymiai.push_back(pazymys);
-                }
-            } else {
-                cerr << "Error reading student grade: Missing or invalid value" << endl;
-                // Handle the error as needed
-            }
-        }
-
-        ss >> Studentas.egzaminas;
-        // Check if egzaminas is a valid number
-        if (ss.fail()) {
-            cerr << "Error reading exam grade: Invalid number format" << endl;
-            // Handle the error as needed
-        }
-
-        double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_med = galutinis;
-        double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_vid = galutinis1;
-        grupe.push_back(Studentas);
-    }
-
-    // Sorting and printing code remains the same
 }
+
+
 
