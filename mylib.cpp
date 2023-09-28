@@ -92,7 +92,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
         } else {
             cout << "Netinkamas pasirinkimas, rodomas galutinis su vidurkiu: "<< "\n";
             cout << "\n";
-            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis" << "\n";
+            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << "\n";
             cout << string(50,'-') << endl;
             for (const studentas& student : studentuSarasas) {
                 cout << left << setw(15) << student.vardas << setw(20) << student.pavarde<< setw(5) << fixed << setprecision(2) << student.rez_vid << "\n";
