@@ -9,6 +9,9 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
+#include <sstream> // Add this line to include the <sstream> header
+
 
 
 
@@ -24,6 +27,10 @@ using std::setprecision;
 using std::numeric_limits;
 using std::streamsize;
 using std::sort;
+using std::ifstream;
+using std::stringstream;
+using std::istringstream;
+using std::cerr;
 
 
 
@@ -34,11 +41,14 @@ struct studentas {
     vector <double> pazymiai;
     double egzaminas;
     double rez_vid;
-    double rez_med; // Median final grade
+    double rez_med;
+
 };
 
 studentas ivesk();
+studentas nuskaityk();
 void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink);
 
 
 #endif // MYLIB_H_INCLUDED
+
