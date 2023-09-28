@@ -130,7 +130,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
 
 studentas nuskaityk() {
     vector<studentas> grupe;
-        ifstream kursiokaitxt("kursiokai.txt");
+        ifstream kursiokaitxt("testavimui1.txt");
         if (!kursiokaitxt.is_open()) {
             cerr << "Nepavyko atidaryti failo" << endl;
             }
