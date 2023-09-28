@@ -42,4 +42,3 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink);
 
 
 #endif // MYLIB_H_INCLUDED
-

@@ -18,6 +18,15 @@ double mediana(const vector<double>& sk) {
     }
 }
 
+double vidurkis(const vector<double>& pazymiai) {
+    double nd_suma = 0;
+    for (double paz : pazymiai) {
+        nd_suma += paz;
+    }
+    return pazymiai.size() > 0 ? nd_suma / pazymiai.size() : 0;
+}
+
+
 studentas ivesk(){
     studentas temp;
     cout << "Iveskite varda (arba 0, jei norite baigti ivedima): ";
@@ -89,14 +98,9 @@ studentas ivesk(){
 
     }
 
-    double nd_suma = 0;
-    for (double paz : temp.pazymiai) {
-        nd_suma += paz;
-    }
 
-    double vidurkis = temp.pazymiai.size() > 0 ? nd_suma / temp.pazymiai.size() : 0;
 
-    temp.rez_vid = 0.4 * vidurkis + 0.6 * temp.egzaminas;
+    temp.rez_vid = 0.4 * vidurkis(temp.pazymiai) + 0.6 * temp.egzaminas;
     temp.rez_med = 0.4 * mediana(temp.pazymiai)+ 0.6 * temp.egzaminas;
 
 }
