@@ -26,9 +26,9 @@ double vidurkis(const vector<double>& pazymiai) {
     return pazymiai.size() > 0 ? nd_suma / pazymiai.size() : 0;
 }
 
-
 studentas ivesk(){
     studentas temp;
+
     cout << "Iveskite varda (arba 0, jei norite baigti ivedima): ";
     cin>> temp.vardas;
 
@@ -97,12 +97,8 @@ studentas ivesk(){
 
 
     }
-
-
-
     temp.rez_vid = 0.4 * vidurkis(temp.pazymiai) + 0.6 * temp.egzaminas;
     temp.rez_med = 0.4 * mediana(temp.pazymiai)+ 0.6 * temp.egzaminas;
-
 }
 
 void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
@@ -131,3 +127,34 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
         }
         cout << string(50,'-') << endl;
     }
+
+studentas nuskaityk() {
+    vector<studentas> grupe;
+        ifstream kursiokaitxt("kursiokai.txt");
+        if (!kursiokaitxt.is_open()) {
+            cerr << "Nepavyko atidaryti failo" << endl;
+            }
+
+        string line;
+        getline(kursiokaitxt, line);
+        while (getline(kursiokaitxt, line)) {
+            studentas Studentas;
+            stringstream ss(line);
+            ss >> Studentas.vardas >> Studentas.pavarde;
+            for (int i = 1; i <= 15; i++) {
+                    int pazymys;
+                    if (ss >> pazymys) {
+                        Studentas.pazymiai.push_back(pazymys);
+                    }
+            }
+
+            ss >> Studentas.egzaminas;
+            double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
+            Studentas.rez_med = galutinis;
+            double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
+            Studentas.rez_vid = galutinis1;
+            grupe.push_back(Studentas);
+
+        }
+
+}
