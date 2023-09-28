@@ -30,19 +30,37 @@ studentas ivesk(){
     cout << "Iveskite pavarde: ";
     cin >> temp.pavarde;
 
-    double pazymys;
-    cout << "Iveskite namu darbu rezultatus (iveskite -1, jei norite baigti): ";
-    while (true) {
-        cin >> pazymys;
-        if (pazymys == -1) {
-            break;
+
+    int pazymys;
+    cout << "Ar norite sugeneruoti atsitiktinius pazymius? (1 - Taip, 0 - Ne): ";
+    int generateRandomPazymiai;
+    cin >> generateRandomPazymiai;
+
+    if (generateRandomPazymiai == 1) {
+        srand(time(0));
+        int numRandomPazymiai = rand() % 11;
+        cout << "Sugeneruoti pazymiai: ";
+        for (int i = 0; i < numRandomPazymiai; ++i) {
+            int randomPazymys = rand() % 11;
+            temp.pazymiai.push_back(randomPazymys);
+            cout << randomPazymys << " ";
         }
-        temp.pazymiai.push_back(pazymys);
+
+        srand(time(0));
+        temp.egzaminas = rand() % 11;
+        cout << "Sugeneruotas egzamino pazymys: "<< temp.egzaminas << endl;
+        cout << "\n";
+
+    } else {
+        cout << "Iveskite namu darbu rezultatus (iveskite -1, jei norite baigti): ";
+        while (true) {
+            cin >> pazymys;
+            if (pazymys == -1) {
+                break;
+            }
+            temp.pazymiai.push_back(pazymys);
+        }
     }
-
-    cout << "Iveskite egzamino rezultata: ";
-    cin >> temp.egzaminas;
-
 
     double nd_suma = 0;
     for (double paz : temp.pazymiai) {
