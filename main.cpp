@@ -1,4 +1,5 @@
 #include "mylib.h"
+
 int main() {
 
     vector<studentas> studentuSarasas;
@@ -12,8 +13,11 @@ int main() {
         studentuSarasas.push_back(naujasStudentas);
     }
 
-    spausdintiLentele(studentuSarasas);
+    int pasirink;
+    cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
+    cin >> pasirink;
 
+    spausdintiLentele(studentuSarasas, pasirink);
     return 0;
 
     }

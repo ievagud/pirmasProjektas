@@ -6,6 +6,8 @@
 #include <vector>
 #include <iomanip>
 #include <limits>
+#include <algorithm>
+
 
 using std::cout;
 using std::cin;
@@ -18,6 +20,7 @@ using std::fixed;
 using std::setprecision;
 using std::numeric_limits;
 using std::streamsize;
+using std::sort;
 
 
 
@@ -27,11 +30,12 @@ struct studentas {
     string pavarde;
     vector <double> pazymiai;
     double egzaminas;
-    double rez;
+    double rez_vid;
+    double rez_med; // Median final grade
 };
 
 studentas ivesk();
-void spausdintiLentele(const vector<studentas>& studentuSarasas);
+void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink);
 
 
 #endif // MYLIB_H_INCLUDED
