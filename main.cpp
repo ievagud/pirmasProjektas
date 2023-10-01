@@ -1,4 +1,3 @@
-
 #include "mylib.h"
 
 int main() {
@@ -10,16 +9,16 @@ int main() {
     cin >> x;
 
     if (x == 1) {
-        studentas grupe = nuskaityk();
-        studentuSarasas.push_back(grupe);
+        studentas studentai1 = nuskaityk();
+        studentuSarasas.push_back(studentai1);
     } else if (x == 2) {
         while (true) {
-            studentas naujasStudentas = ivesk();
-            if (naujasStudentas.vardas == "0") {
+            studentas studentai2 = ivesk();
+            if (studentai2.vardas == "0") {
                 break;
             }
 
-            studentuSarasas.push_back(naujasStudentas);
+            studentuSarasas.push_back(studentai2);
         }
     } else {
         cout << "Netinkamas ivedimas" << endl;
@@ -29,13 +28,8 @@ int main() {
     int pasirink;
     cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
     cin >> pasirink;
+
     spausdintiLentele(studentuSarasas, pasirink);
-
-    return 0;
-
-
-    studentas grupe = nuskaityk();
-
 
     }
 

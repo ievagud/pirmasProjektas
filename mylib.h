@@ -7,13 +7,9 @@
 #include <iomanip>
 #include <limits>
 #include <algorithm>
-#include <ctime>
-#include <cstdlib>
 #include <fstream>
-#include <sstream> // Add this line to include the <sstream> header
-
-
-
+#include <sstream>
+#include <stdexcept>
 
 using std::cout;
 using std::cin;
@@ -31,8 +27,8 @@ using std::ifstream;
 using std::stringstream;
 using std::istringstream;
 using std::cerr;
-
-
+using std::invalid_argument;
+using std::out_of_range;
 
 
 struct studentas {
@@ -46,9 +42,10 @@ struct studentas {
 };
 
 studentas ivesk();
+void spausdintiLentele(const vector<studentas>&, int pasirink);
 studentas nuskaityk();
-void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink);
-
+double mediana(const vector<double>& sk);
+double vidurkis(const vector<double>& pazymiai);
 
 #endif // MYLIB_H_INCLUDED
 
