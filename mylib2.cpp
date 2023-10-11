@@ -1,7 +1,7 @@
 #include "mylib.h"
 
-void generavimas(int stud_sk) {
 
+void generavimas(int stud_sk) {
     string failopavadinimas;
 
     if (stud_sk == 1000) {
@@ -53,119 +53,6 @@ void generavimas(int stud_sk) {
 
     cout << "Sugeneruota " << stud_sk << " studentu duomenys. Duomenys issaugoti faile " << failopavadinimas << endl;
 }
-
-
-/*studentas nuskaityk2(const string& failo_pvd) {
-    vector<studentas> studentai;
-
-
-
-
-    ifstream failas(failo_pvd);
-
-    if (!failas.is_open()) {
-        cerr << "Nepavyko atidaryti failo!" << endl;
-        return studentas();
-    }
-
-    string eil;
-    getline(failas, eil);
-
-    stringstream eil_stream(eil);
-    string sk;
-    int stulp = 0;
-    while (eil_stream >> sk) {
-        stulp++;
-    }
-
-    stulp = stulp - 3;
-    while (getline(failas, eil)) {
-        studentas Studentas;
-        stringstream x(eil);
-        x >> Studentas.vardas >> Studentas.pavarde;
-
-        for (int i = 1; i <= stulp; i++) {
-            int pazymys;
-            if (x >> pazymys) {
-            }
-        }
-        x >> Studentas.egzaminas;
-        double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_med = galutinis;
-        double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_vid = galutinis1;
-        studentai.push_back(Studentas);
-    }
-
-    failas.close();
-
-    sort(studentai.begin(), studentai.end(), [](const studentas& a, const studentas& b) {
-        if (a.vardas != b.vardas) {
-            return a.vardas < b.vardas;
-        } else {
-            return a.pavarde < b.pavarde;
-        }
-    });
-
-}*/
-
-/*void nuskaityk2(vector<studentas>& target, int stud_sk) {
-    string failo_pvd;
-    if (stud_sk == 1000) {
-        failo_pvd = "tukstantis.txt";
-    } else if (stud_sk == 10000) {
-        failo_pvd = "10tukst.txt";
-    } else if (stud_sk == 100000) {
-        failo_pvd = "100tukst.txt";
-    } else if (stud_sk == 1000000) {
-        failo_pvd = "milijonas.txt";
-    } else if (stud_sk == 10000000) {
-        failo_pvd = "10milijonu.txt";
-    } else {
-        cerr << "Nepavyko nustatyti failo dydio!" << std::endl;
-        return;
-    }
-
-    ifstream failas(failo_pvd);
-
-    if (!failas.is_open()) {
-        cerr << "Nepavyko atidaryti failo!" << endl;
-        return;
-    }
-
-    string eil;
-    getline(failas, eil);
-
-    stringstream eil_stream(eil);
-    string sk;
-    int stulp = 0;
-    while (eil_stream >> sk) {
-        stulp++;
-    }
-
-    stulp = stulp - 3;
-    while (getline(failas, eil)) {
-        studentas Studentas;
-        stringstream x(eil);
-        x >> Studentas.vardas >> Studentas.pavarde;
-
-        for (int i = 1; i <= stulp; i++) {
-            int pazymys;
-            if (x >> pazymys) {
-                // You can process the pazymys here if needed.
-            }
-        }
-        x >> Studentas.egzaminas;
-        /*double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_med = galutinis;*/
-        /*double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
-        Studentas.rez_vid = galutinis1;
-        target.push_back(Studentas);
-    }
-
-    failas.close();
-}*/
-
 
 void nuskaityk2(vector<studentas>& target, int stud_sk) {
     string failo_pvd;
@@ -220,12 +107,6 @@ void nuskaityk2(vector<studentas>& target, int stud_sk) {
     failas.close();
 }
 
-
-
-/*bool sortByFinalGrade(const studentas& a, const studentas& b) {
-    return a.rez_vid > b.rez_vid; // Sort in descending order, change to < for ascending order
-}*/
-
 void sortStudentsByFinalGrade(const vector<studentas>& students, vector<studentas>& durni, vector<studentas>& nedurni) {
     for (const studentas& student : students) {
         if (student.rez_vid < 5) {
@@ -235,17 +116,6 @@ void sortStudentsByFinalGrade(const vector<studentas>& students, vector<studenta
         }
     }
 }
-
-/*void rusiavimas(const vector<studentas>& studentuSarasas) {
-
-    for (const studentas& student : studentuSarasas) {
-        if (student.rez_vid < 5.0) {
-            vargsiukai.push_back(student);
-        } else {
-            kietiakiai.push_back(student);
-        }
-    }
-}*/
 
 
 void writeStudentDataToFile(const vector<studentas>& students, const string& filename) {
