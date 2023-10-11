@@ -11,6 +11,10 @@
 #include <sstream>
 #include <stdexcept>
 
+#include <fstream>
+#include <ctime>
+#include <cstdlib>
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -30,6 +34,9 @@ using std::cerr;
 using std::invalid_argument;
 using std::out_of_range;
 
+using std::ofstream;
+using std::to_string;
+
 
 struct studentas {
     string vardas;
@@ -46,6 +53,7 @@ void spausdintiLentele(const vector<studentas>&, int pasirink);
 studentas nuskaityk();
 double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
+void generateDataFile(int stud_sk, const string& failo_pvd);
+
 
 #endif // MYLIB_H_INCLUDED
-

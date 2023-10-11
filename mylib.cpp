@@ -199,5 +199,3 @@ studentas nuskaityk() {
     cout << string(70, '-') << endl;
 }
 
-
-
