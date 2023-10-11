@@ -51,9 +51,20 @@ struct studentas {
 studentas ivesk();
 void spausdintiLentele(const vector<studentas>&, int pasirink);
 studentas nuskaityk();
+
 double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
-void generavimas(int stud_sk, const string& failo_pvd);
+void generavimas(int stud_sk);
+
+void divideStudentsByCategory(const vector<studentas>& studentuSarasas);
+void nuskaityk2(vector<studentas>& target, int stud_sk);
+void sortStudentsByFinalGrade(const vector<studentas>& students, vector<studentas>& durni, vector<studentas>& nedurni);
+void writeStudentDataToFile(const vector<studentas>& students, const string& filename);
+
+
+
+
+
 
 
 #endif // MYLIB_H_INCLUDED
