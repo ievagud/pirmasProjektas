@@ -53,7 +53,7 @@ void spausdintiLentele(const vector<studentas>&, int pasirink);
 studentas nuskaityk();
 double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
-void generateDataFile(int stud_sk, const string& failo_pvd);
+void generavimas(int stud_sk, const string& failo_pvd);
 
 
 #endif // MYLIB_H_INCLUDED

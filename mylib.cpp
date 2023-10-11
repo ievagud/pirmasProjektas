@@ -141,7 +141,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
 
 studentas nuskaityk() {
     string failo_pvd;
-    cout << "Iveskite failo pavadinima: ";
+    cout << "Iveskite failo, kuri norite nuskaityti pavadinima: ";
     cin >> failo_pvd;
 
     vector<studentas> studentai;

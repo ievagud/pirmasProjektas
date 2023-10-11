@@ -34,26 +34,29 @@ int main() {
 
         if (stud_sk == 1) {
             failo_pvd = "tukstantis.txt";
-            generateDataFile(1000, failo_pvd);
+            generavimas(1000, failo_pvd);
 
         } else if (stud_sk == 2) {
             failo_pvd = "10tukst.txt";
-            generateDataFile(10000, failo_pvd);
+            generavimas(10000, failo_pvd);
 
         } else if (stud_sk == 3) {
             failo_pvd = "100tukst.txt";
-            generateDataFile(100000, failo_pvd);
+            generavimas(100000, failo_pvd);
 
         } else if (stud_sk == 4) {
             failo_pvd = "milijonas.txt";
-            generateDataFile(1000000, failo_pvd);
+            generavimas(1000000, failo_pvd);
 
         } else if (stud_sk == 5) {
             failo_pvd = "10milijonu.txt";
-            generateDataFile(10000000, failo_pvd);
+            generavimas(10000000, failo_pvd);
         } else {
             cout << "Netinkamas pasirinkimas" << endl;
         }
+
+        studentas studentai1 = nuskaityk();
+        studentuSarasas.push_back(studentai1);
 
     } else {
         cout << "Netinkamas ivedimas" << endl;
