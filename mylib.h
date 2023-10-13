@@ -58,8 +58,8 @@ void generavimas(int stud_sk);
 
 void divideStudentsByCategory(const vector<studentas>& studentuSarasas);
 void nuskaityk2(vector<studentas>& target, int stud_sk);
-void sortStudentsByFinalGrade(const vector<studentas>& students, vector<studentas>& durni, vector<studentas>& nedurni);
-void writeStudentDataToFile(const vector<studentas>& students, const string& filename);
+void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& kvailiukai, vector<studentas>& protinguoliai);
+void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd);
 
 
 

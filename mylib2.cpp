@@ -19,12 +19,11 @@ void generavimas(int stud_sk) {
 
         }
 
-    ofstream outputas(failopavadinimas); // Open the file with the determined name
+    ofstream outputas(failopavadinimas);
     if (!outputas.is_open()) {
         cerr << "Nepavyko atidaryti failo" << endl;
         return;
     }
-
 
     srand(static_cast<unsigned int>(time(nullptr)));
 
@@ -54,7 +53,7 @@ void generavimas(int stud_sk) {
     cout << "Sugeneruota " << stud_sk << " studentu duomenys. Duomenys issaugoti faile " << failopavadinimas << endl;
 }
 
-void nuskaityk2(vector<studentas>& target, int stud_sk) {
+void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
     string failo_pvd;
     if (stud_sk == 1000) {
         failo_pvd = "tukstantis.txt";
@@ -83,16 +82,16 @@ void nuskaityk2(vector<studentas>& target, int stud_sk) {
     string eil;
     getline(failas, eil);
 
-    int numHomeworkColumns = 10;
+    int nd_sk = 10;
 
     while (getline(failas, eil)) {
         studentas Studentas;
         stringstream x(eil);
         x >> Studentas.vardas >> Studentas.pavarde;
 
-        Studentas.pazymiai.resize(numHomeworkColumns);
+        Studentas.pazymiai.resize(nd_sk);
 
-        for (int i = 0; i < numHomeworkColumns; i++) {
+        for (int i = 0; i < nd_sk; i++) {
             if (x >> Studentas.pazymiai[i]) {
             }
         }
@@ -101,49 +100,37 @@ void nuskaityk2(vector<studentas>& target, int stud_sk) {
 
         double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
         Studentas.rez_vid = galutinis1;
-        target.push_back(Studentas);
+        vekt.push_back(Studentas);
     }
 
     failas.close();
 }
 
-void sortStudentsByFinalGrade(const vector<studentas>& students, vector<studentas>& durni, vector<studentas>& nedurni) {
-    for (const studentas& student : students) {
-        if (student.rez_vid < 5) {
-            durni.push_back(student);
+void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& kvailiukai, vector<studentas>& protinguoliai) {
+    for (const studentas& stud : studentai) {
+        if (stud.rez_vid < 5) {
+            kvailiukai.push_back(stud);
         } else {
-            nedurni.push_back(student);
+            protinguoliai.push_back(stud);
         }
     }
 }
 
 
-void writeStudentDataToFile(const vector<studentas>& students, const string& filename) {
-    ofstream outputFile(filename);
+void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd) {
+    ofstream outputas(failo_pvd);
 
-    if (!outputFile.is_open()) {
-        cerr << "Nepavyko atidaryti failo: " << filename << endl;
+    if (!outputas.is_open()) {
+        cerr << "Nepavyko atidaryti failo: " << failo_pvd << endl;
         return;
     }
 
-    outputFile << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis" << "\n";
-    outputFile << string(70, '-') << endl;
+    outputas << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis" << "\n";
+    outputas << string(40, '-') << endl;
 
-    for (const studentas& student : students) {
-        outputFile << left << setw(15) << student.vardas << setw(15) << student.pavarde << setw(20) << fixed << setprecision(2) << student.rez_vid << "\n";
+    for (const studentas& stud : studentai) {
+        outputas << left << setw(15) << stud.vardas << setw(15) << stud.pavarde << setw(20) << fixed << setprecision(2) << stud.rez_vid << "\n";
     }
 
-    outputFile.close();
+    outputas.close();
 }
-
-
-
-
-
-
-
-
-
-
-
-
