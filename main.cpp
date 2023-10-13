@@ -9,10 +9,10 @@ int main() {
     vector<studentas> protinguoliai;
 
     int bandymai = 3;
-            double trys_nusk = 0;
-            double trys_rus = 0;
-            double trys_k_isved = 0;
-            double trys_p_isved = 0;
+    double trys_nusk = 0;
+    double trys_rus = 0;
+    double trys_k_isved = 0;
+    double trys_p_isved = 0;
 
 
     int x;
@@ -20,29 +20,21 @@ int main() {
     cin >> x;
 
     if (x == 1) {
+
         studentas studentai1 = nuskaityk();
         studentuSarasas.push_back(studentai1);
 
-        int pasirink;
-        cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
-        cin >> pasirink;
-
-        spausdintiLentele(studentuSarasas, pasirink);
-
     } else if (x == 2) {
+
+
         while (true) {
             studentas studentai2 = ivesk();
             if (studentai2.vardas == "0") {
                 break;
             }
+
             studentuSarasas.push_back(studentai2);
         }
-
-        int pasirink;
-        cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
-        cin >> pasirink;
-
-        spausdintiLentele(studentuSarasas, pasirink);
 
     } else if (x==3){
         vector<int> stud_sk = {1000, 10000, 100000, 1000000, 10000000};
@@ -78,12 +70,8 @@ int main() {
             cout << "Vidutinis rusiavimo laikas: " << vidurkis2 << endl;
             cout << "\n";
 
-
-
-
             string kvailiuku = "kvailiukai_" + to_string(x) + ".txt";
             string protinguoliu = "protinguoliai_" + to_string(x) + ".txt";
-
 
             for (int i = 1; i <= bandymai; i++) {
                 Timer d;
@@ -92,11 +80,10 @@ int main() {
                 cout << "Isvedimas durniuku nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
                 trys_k_isved += isved_laikas;
             }
+
             double vidurkis3 = trys_k_isved / bandymai;
             cout << "Vidutinis isvedimo laikas: " << vidurkis3 << endl;
             cout << "\n";
-
-
 
             for (int i = 1; i <= bandymai; i++) {
                 Timer e;
@@ -105,6 +92,7 @@ int main() {
                 cout << "Isvedimas protingu nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
                 trys_p_isved += isved_laikas;
             }
+
             double vidurkis4 = trys_p_isved / bandymai;
             cout << "Vidutinis isvedimo laikas: " << vidurkis4 << endl;
             cout << "\n";
@@ -115,14 +103,11 @@ int main() {
         return 1;
     }
 
-
-    /*int pasirink;
+    int pasirink;
     cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
     cin >> pasirink;
 
-    spausdintiLentele(studentuSarasas, pasirink);*/
-
-
+    spausdintiLentele(studentuSarasas, pasirink);
 
     }
 

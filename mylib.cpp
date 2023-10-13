@@ -25,6 +25,7 @@ double vidurkis(const vector<double>& pazymiai) {
     return pazymiai.size() > 0 ? paz_suma / pazymiai.size() : 0;
 }
 
+
 studentas ivesk(){
     studentas temp;
 
@@ -60,6 +61,8 @@ studentas ivesk(){
 
     } else {
 
+        double pazymys;
+
        while (true) {
             try {
                 cout << "Iveskite pazymi (nuo 0 iki 10, iveskite -1, jei norite baigti ivedima ): ";
@@ -91,6 +94,7 @@ studentas ivesk(){
 
                 if (cin >> egz) {
                     if (egz >= 0 && egz <= 10) {
+                        temp.egzaminas = egz; // Store the exam grade in the student structure2
                         break;
                     } else {
                         throw invalid_argument("Ivestas pazymys neatitinka intervalo [0-10]!");
@@ -107,7 +111,10 @@ studentas ivesk(){
     }
 
     temp.rez_vid = 0.4 * vidurkis(temp.pazymiai) + 0.6 * temp.egzaminas;
-    temp.rez_med = 0.4 * mediana(temp.pazymiai)+ 0.6 * temp.egzaminas;
+    temp.rez_med = 0.4 * mediana(temp.pazymiai) + 0.6 * temp.egzaminas;
+
+        return temp; // Return the student
+
 }
 
 
@@ -141,7 +148,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
 
 studentas nuskaityk() {
     string failo_pvd;
-    cout << "Iveskite failo, kuri norite nuskaityti pavadinima: ";
+    cout << "Iveskite failo pavadinima: ";
     cin >> failo_pvd;
 
     vector<studentas> studentai;
@@ -170,9 +177,12 @@ studentas nuskaityk() {
         for (int i = 1; i <= stulp; i++) {
             int pazymys;
             if (x >> pazymys) {
+                Studentas.pazymiai.push_back(pazymys);
+
             }
         }
         x >> Studentas.egzaminas;
+
         double galutinis = 0.4 * mediana(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
         Studentas.rez_med = galutinis;
         double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
@@ -198,4 +208,3 @@ studentas nuskaityk() {
     }
     cout << string(70, '-') << endl;
 }
-
