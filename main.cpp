@@ -5,18 +5,18 @@ int main() {
 
     vector<studentas> studentuSarasas;
     vector<studentas> nuskaitymui;
-    vector<studentas> durni;
-    vector<studentas> nedurni;
+    vector<studentas> kvailiukai;
+    vector<studentas> protinguoliai;
 
-    int numRuns = 3;
-            double totalElapsedNusk = 0;
-            double totalElapsedRus = 0;
-            double totalElapsedIsveddurniukai = 0;
-            double totalElapsedIsvedprotingi = 0;
+    int bandymai = 3;
+            double trys_nusk = 0;
+            double trys_rus = 0;
+            double trys_k_isved = 0;
+            double trys_p_isved = 0;
 
 
     int x;
-    cout << "Spauskite 1, jei norite nuskaityti duomenis is failo. Spauskite 2, jei norite ivesti duomenis. Spauskite 3, jei norite sugeneruoti duomenu faila: " << endl;
+    cout << "Spauskite 1, jei norite nuskaityti duomenis is failo. Spauskite 2, jei norite ivesti duomenis. Spauskite 3, jei norite sugeneruoti duomenu failus: " << endl;
     cin >> x;
 
     if (x == 1) {
@@ -49,64 +49,64 @@ int main() {
 
         for (int x: stud_sk ) {
 
-            Timer timer;
+            Timer a;
             generavimas(x);
-            double elapsed_gen = timer.elapsed();
-            cout << "Generavimas uztruko " << elapsed_gen << " sekundziu" << endl;
+            double gen_laikas = a.elapsed();
+            cout << "Generavimas uztruko " << gen_laikas << " sekundziu" << endl;
 
 
-            for (int run = 1; run <= numRuns; run++) {
-                Timer timer1;
+            for (int i = 1; i <= bandymai; i++) {
+                Timer b;
                 nuskaityk2(nuskaitymui, x);
-                double elapsed_nusk = timer1.elapsed();
-                cout << "Nuskaitymas nr." << run << " uztruko " << elapsed_nusk << " sekundziu" << endl;
-                totalElapsedNusk += elapsed_nusk;
+                double nusk_laikas = b.elapsed();
+                cout << "Nuskaitymas nr." << i << " uztruko " << nusk_laikas << " sekundziu" << endl;
+                trys_nusk += nusk_laikas;
             }
-            double averageElapsedNusk = totalElapsedNusk / numRuns;
-            cout << "Vidutinis nuskaitymo laikas: " << averageElapsedNusk << endl;
+            double vidurkis1 = trys_nusk / bandymai;
+            cout << "Vidutinis nuskaitymo laikas: " << vidurkis1 << endl;
             cout << "\n";
 
 
-            for (int run = 1; run <= numRuns; run++) {
-                Timer timer2;
-                sort_galutinio(nuskaitymui, durni, nedurni);
-                double elapsed_rus = timer2.elapsed();
-                cout << "Rusiavimas nr." << run << " uztruko " << elapsed_rus << " sekundziu" << endl;
-                totalElapsedRus += elapsed_rus;
+            for (int i = 1; i <= bandymai; i++) {
+                Timer c;
+                sort_galutinio(nuskaitymui, kvailiukai, protinguoliai);
+                double rus_laikas = c.elapsed();
+                cout << "Rusiavimas nr." << i << " uztruko " << rus_laikas << " sekundziu" << endl;
+                trys_rus += rus_laikas;
             }
-            double averageElapsedRus = totalElapsedRus / numRuns;
-            cout << "Vidutinis rusiavimo laikas: " << averageElapsedRus << endl;
-            cout << "\n";
-
-
-
-
-            string durniFileName = "durni_" + to_string(x) + ".txt";
-            string nedurniFileName = "nedurni_" + to_string(x) + ".txt";
-
-
-            for (int run = 1; run <= numRuns; run++) {
-                Timer timer3;
-                irasymas_i_faila(durni, durniFileName);
-                double elapsed_isved = timer3.elapsed();
-                cout << "Isvedimas durniuku nr." << run << " uztruko " << elapsed_isved << " sekundziu" << endl;
-                totalElapsedIsveddurniukai += elapsed_isved;
-            }
-            double averageElapsedIsvedD = totalElapsedIsveddurniukai / numRuns;
-            cout << "Vidutinis isvedimo laikas: " << averageElapsedIsvedD << endl;
+            double vidurkis2 = trys_rus / bandymai;
+            cout << "Vidutinis rusiavimo laikas: " << vidurkis2 << endl;
             cout << "\n";
 
 
 
-            for (int run = 1; run <= numRuns; run++) {
-                Timer timer4;
-                irasymas_i_faila(nedurni, nedurniFileName);
-                double elapsed_isved = timer4.elapsed();
-                cout << "Isvedimas protingu nr." << run << " uztruko " << elapsed_isved << " sekundziu" << endl;
-                totalElapsedIsvedprotingi += elapsed_isved;
+
+            string kvailiuku = "kvailiukai_" + to_string(x) + ".txt";
+            string protinguoliu = "protinguoliai_" + to_string(x) + ".txt";
+
+
+            for (int i = 1; i <= bandymai; i++) {
+                Timer d;
+                irasymas_i_faila(kvailiukai, kvailiuku);
+                double isved_laikas = d.elapsed();
+                cout << "Isvedimas durniuku nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
+                trys_k_isved += isved_laikas;
             }
-            double averageElapsedIsvedP = totalElapsedIsvedprotingi / numRuns;
-            cout << "Vidutinis isvedimo laikas: " << averageElapsedIsvedP << endl;
+            double vidurkis3 = trys_k_isved / bandymai;
+            cout << "Vidutinis isvedimo laikas: " << vidurkis3 << endl;
+            cout << "\n";
+
+
+
+            for (int i = 1; i <= bandymai; i++) {
+                Timer e;
+                irasymas_i_faila(protinguoliai, protinguoliu);
+                double isved_laikas = e.elapsed();
+                cout << "Isvedimas protingu nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
+                trys_p_isved += isved_laikas;
+            }
+            double vidurkis4 = trys_p_isved / bandymai;
+            cout << "Vidutinis isvedimo laikas: " << vidurkis4 << endl;
             cout << "\n";
             }
 
