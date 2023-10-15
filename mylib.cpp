@@ -94,7 +94,7 @@ studentas ivesk(){
 
                 if (cin >> egz) {
                     if (egz >= 0 && egz <= 10) {
-                        temp.egzaminas = egz; // Store the exam grade in the student structure2
+                        temp.egzaminas = egz;
                         break;
                     } else {
                         throw invalid_argument("Ivestas pazymys neatitinka intervalo [0-10]!");
@@ -113,7 +113,7 @@ studentas ivesk(){
     temp.rez_vid = 0.4 * vidurkis(temp.pazymiai) + 0.6 * temp.egzaminas;
     temp.rez_med = 0.4 * mediana(temp.pazymiai) + 0.6 * temp.egzaminas;
 
-        return temp; // Return the student
+    return temp;
 
 }
 

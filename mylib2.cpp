@@ -5,15 +5,15 @@ void generavimas(int stud_sk) {
     string failopavadinimas;
 
     if (stud_sk == 1000) {
-            failopavadinimas = "tukstantis.txt";
+            failopavadinimas = "1000.txt";
         } else if (stud_sk == 10000) {
-            failopavadinimas = "10tukst.txt";
+            failopavadinimas = "10000.txt";
         } else if (stud_sk == 100000) {
-            failopavadinimas = "100tukst.txt";
+            failopavadinimas = "100000.txt";
         } else if (stud_sk == 1000000) {
-            failopavadinimas = "milijonas.txt";
+            failopavadinimas = "1000000.txt";
         } else if (stud_sk == 10000000) {
-            failopavadinimas = "10milijonu.txt";
+            failopavadinimas = "10000000.txt";
         } else {
             cerr << "Nepavyko nustatyti failo dydžio!" << endl;
 
@@ -53,7 +53,7 @@ void generavimas(int stud_sk) {
     cout << "Sugeneruota " << stud_sk << " studentu duomenys. Duomenys issaugoti faile " << failopavadinimas << endl;
 }
 
-void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
+/*void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
     string failo_pvd;
     if (stud_sk == 1000) {
         failo_pvd = "tukstantis.txt";
@@ -65,14 +65,20 @@ void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
         failo_pvd = "milijonas.txt";
     } else if (stud_sk == 10000000) {
         failo_pvd = "10milijonu.txt";
-    } else if (stud_sk == 5) {
-        failo_pvd = "testavimui.txt";
     } else {
         cerr << "Nepavyko nustatyti failo dydžio!" << std::endl;
         return;
     }
 
-    ifstream failas(failo_pvd);
+    /*failo_pvd = to_string(stud_sk) + ".txt";
+    ifstream testFile(failo_pvd);
+    if (!testFile) {
+        cerr << "Nepavyko nustatyti failo dydžio!" << std::endl;
+        return;
+    }*/
+
+
+    /*ifstream failas(failo_pvd);
 
     if (!failas.is_open()) {
         cerr << "Nepavyko atidaryti failo!" << endl;
@@ -104,14 +110,56 @@ void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
     }
 
     failas.close();
+
+
+}*/
+
+void nuskaityk2(vector<studentas>& vekt, int stud_sk) {
+    string failopvd = to_string(stud_sk) + ".txt";
+
+    ifstream failas(failopvd);
+    if (!failas.is_open()) {
+        cerr << "Nepavyko atidaryti failo" << endl;
+        return;
+    }
+
+    string eil;
+    getline(failas, eil);
+
+    stringstream x(eil);
+
+    string el;
+
+    int num = 0;
+    while (x >> el) {
+        num++;
+    }
+    num = num-3;
+
+    while (getline(failas, eil)) {
+        studentas Studentas;
+        stringstream stud(eil);
+        stud >> Studentas.vardas >> Studentas.pavarde;
+        for (int i = 1; i < num; i++) {
+            int pazymys;
+            if (stud >> pazymys) {
+                Studentas.pazymiai.push_back(pazymys);
+            }
+        }
+        stud >> Studentas.egzaminas;
+
+        double galutinis1 = 0.4 * vidurkis(Studentas.pazymiai) + 0.6 * Studentas.egzaminas;
+        Studentas.rez_vid = galutinis1;
+        vekt.push_back(Studentas);
+    }
 }
 
-void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& kvailiukai, vector<studentas>& protinguoliai) {
+void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
     for (const studentas& stud : studentai) {
         if (stud.rez_vid < 5) {
-            kvailiukai.push_back(stud);
+            vargsiukai.push_back(stud);
         } else {
-            protinguoliai.push_back(stud);
+            kietakai.push_back(stud);
         }
     }
 }

@@ -5,8 +5,8 @@ int main() {
 
     vector<studentas> studentuSarasas;
     vector<studentas> nuskaitymui;
-    vector<studentas> kvailiukai;
-    vector<studentas> protinguoliai;
+    vector<studentas> vargsiukai;
+    vector<studentas> kietakai;
 
     int bandymai = 3;
     double trys_nusk = 0;
@@ -34,6 +34,12 @@ int main() {
             }
 
             studentuSarasas.push_back(studentai2);
+
+            int pasirink;
+            cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
+            cin >> pasirink;
+
+            spausdintiLentele(studentuSarasas, pasirink);
         }
 
     } else if (x==3){
@@ -41,61 +47,61 @@ int main() {
 
         for (int x: stud_sk ) {
 
+            double trys_nusk = 0;
+            double trys_rus = 0;
+            double trys_v_isved = 0;
+            double trys_k_isved = 0;
+
+            nuskaitymui.clear();
+            vargsiukai.clear();
+            kietakai.clear();
+
             Timer a;
             generavimas(x);
             double gen_laikas = a.elapsed();
             cout << "Generavimas uztruko " << gen_laikas << " sekundziu" << endl;
 
-
             for (int i = 1; i <= bandymai; i++) {
+                nuskaitymui.clear();
+                vargsiukai.clear();
+                kietakai.clear();
+
                 Timer b;
                 nuskaityk2(nuskaitymui, x);
                 double nusk_laikas = b.elapsed();
-                cout << "Nuskaitymas nr." << i << " uztruko " << nusk_laikas << " sekundziu" << endl;
                 trys_nusk += nusk_laikas;
+
+                Timer c;
+                sort_galutinio(nuskaitymui, vargsiukai, kietakai);
+                double rus_laikas = c.elapsed();
+                trys_rus += rus_laikas;
+
+                string vargsu = "vargsiukai" + to_string(x) + ".txt";
+                string kietuku = "kietakai" + to_string(x) + ".txt";
+
+                Timer d;
+                irasymas_i_faila(vargsiukai, vargsu);
+                double isved_laikas1 = d.elapsed();
+                trys_v_isved += isved_laikas1;
+
+                Timer e;
+                irasymas_i_faila(kietakai, kietuku);
+                double isved_laikas2 = e.elapsed();
+                trys_k_isved += isved_laikas2;
             }
             double vidurkis1 = trys_nusk / bandymai;
             cout << "Vidutinis nuskaitymo laikas: " << vidurkis1 << endl;
-            cout << "\n";
 
-
-            for (int i = 1; i <= bandymai; i++) {
-                Timer c;
-                sort_galutinio(nuskaitymui, kvailiukai, protinguoliai);
-                double rus_laikas = c.elapsed();
-                cout << "Rusiavimas nr." << i << " uztruko " << rus_laikas << " sekundziu" << endl;
-                trys_rus += rus_laikas;
-            }
             double vidurkis2 = trys_rus / bandymai;
             cout << "Vidutinis rusiavimo laikas: " << vidurkis2 << endl;
-            cout << "\n";
-
-            string kvailiuku = "kvailiukai_" + to_string(x) + ".txt";
-            string protinguoliu = "protinguoliai_" + to_string(x) + ".txt";
-
-            for (int i = 1; i <= bandymai; i++) {
-                Timer d;
-                irasymas_i_faila(kvailiukai, kvailiuku);
-                double isved_laikas = d.elapsed();
-                cout << "Isvedimas durniuku nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
-                trys_k_isved += isved_laikas;
-            }
 
             double vidurkis3 = trys_k_isved / bandymai;
-            cout << "Vidutinis isvedimo laikas: " << vidurkis3 << endl;
-            cout << "\n";
-
-            for (int i = 1; i <= bandymai; i++) {
-                Timer e;
-                irasymas_i_faila(protinguoliai, protinguoliu);
-                double isved_laikas = e.elapsed();
-                cout << "Isvedimas protingu nr." << i << " uztruko " << isved_laikas << " sekundziu" << endl;
-                trys_p_isved += isved_laikas;
-            }
+            cout << "Vidutinis vargsiuku isvedimo i faila laikas: " << vidurkis3 << endl;
 
             double vidurkis4 = trys_p_isved / bandymai;
-            cout << "Vidutinis isvedimo laikas: " << vidurkis4 << endl;
+            cout << "Vidutinis kietaku isvedimo i faila laikas: " << vidurkis4 << endl;
             cout << "\n";
+
             }
 
     } else {

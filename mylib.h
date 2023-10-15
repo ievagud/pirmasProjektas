@@ -42,6 +42,10 @@ struct studentas {
     string vardas;
     string pavarde;
     vector <double> pazymiai;
+
+     double pazymiai2[10];
+
+
     double egzaminas;
     double rez_vid;
     double rez_med;
@@ -55,8 +59,8 @@ double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
 
 void generavimas(int stud_sk);
-void nuskaityk2(vector<studentas>& target, int stud_sk);
-void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& kvailiukai, vector<studentas>& protinguoliai);
+void nuskaityk2(vector<studentas>& vekt, int stud_sk);
+void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai);
 void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd);
 
 #endif // MYLIB_H_INCLUDED
