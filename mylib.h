@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#include <random>
 
 #include <fstream>
 #include <ctime>
@@ -36,6 +37,8 @@ using std::out_of_range;
 
 using std::ofstream;
 using std::to_string;
+using std::default_random_engine;
+using std::uniform_int_distribution;
 
 
 struct studentas {
@@ -59,8 +62,10 @@ double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
 
 void generavimas(int stud_sk);
-void nuskaityk2(vector<studentas>& vekt, int stud_sk);
+void nuskaityk2(vector<studentas>& vekt, string failopvd);
 void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai);
 void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd);
+void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas);
+
 
 #endif // MYLIB_H_INCLUDED
