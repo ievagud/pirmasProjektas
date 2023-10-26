@@ -16,12 +16,12 @@ int main() {
 
 
     int x;
-    cout << "Spauskite 1, jei norite nuskaityti duomenis is failo. Spauskite 2, jei norite ivesti duomenis" << endl;
+    cout << "Spauskite 1, jei norite nuskaityti duomenis is failu ir atlikti skaiciavimus. Spauskite 2, jei norite ivesti duomenis. Spauskite 3, jei norite nuskaityti faila ir isspausdinti duomenis ekrane" << endl;
     cin >> x;
 
     if (x == 1) {
         int y;
-        cout << "Spauskite 1, jei norite sugeneruoti failus, juos nuskaityti ir atlikti veiksmus. Spauskite 2, jei norite nuskaityti jau egzistuojanti faila ir atlikti veiksmus " << endl;
+        cout << "Spauskite 1, jei norite sugeneruoti failus, juos nuskaityti ir atlikti veiksmus. Spauskite 2, jei norite nuskaityti jau egzistuojancius failus ir atlikti veiksmus." << endl;
         cin >> y;
 
         if (y == 1){
@@ -179,9 +179,6 @@ int main() {
 
     }
 
-        /*studentas studentai1 = nuskaityk();
-        studentuSarasas.push_back(studentai1);*/
-
     } else if (x == 2) {
 
 
@@ -192,24 +189,28 @@ int main() {
             }
 
             studentuSarasas.push_back(studentai2);
-
+        }
             int pasirink;
             cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
             cin >> pasirink;
 
             spausdintiLentele(studentuSarasas, pasirink);
-        }
+
+    } else if (x==3) {
+
+        studentas studentai1 = nuskaityk();
+        studentuSarasas.push_back(studentai1);
+
+        int pasirink;
+        cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
+        cin >> pasirink;
+
+        spausdintiLentele(studentuSarasas, pasirink);
 
     } else {
         cout << "Netinkamas ivedimas" << endl;
         return 1;
     }
 
-    int pasirink;
-    cout << "Pasirinkite galutinio balo tipa (1 - Vidurkis, 2 - Mediana): ";
-    cin >> pasirink;
-
-    spausdintiLentele(studentuSarasas, pasirink);
-
-    }
+}
 
