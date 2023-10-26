@@ -126,6 +126,8 @@ int main() {
                 double trys_k_isved = 0.0;
                 double tris_k_rusiuoja = 0.0;
 
+            cout << z << endl;
+
         for (int i = 1; i <= bandymai; i++) {
                     nuskaitymui.clear();
                     vargsiukai.clear();
