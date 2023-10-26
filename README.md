@@ -24,3 +24,14 @@ v0.2 atsiradę failai:
 
 <img width="571" alt="Ekrano kopija 2023-10-25 131334" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/c453235a-c684-478d-8d78-86c2f5efb19c">
 <img width="588" alt="Ekrano kopija 2023-10-25 131405" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/ee567ff6-2995-4114-8d12-942541916f33">
+
+
+**v0.3**
+
+v0.3 versijos programoje visur, kur buvo naudojama _std::vector<studentas>_, pakeista į _std::list<studentas>_
+
+
+|         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| std::vector <studentas>  |  0.0316878 | OOOOOO  | OOOOOOO  | 0.0009999  | 0  |0.00566663  |0|
+| std::list<studentas>  | 0.013842  | OOOOOO  | OOOOOOOO  | 0  | 0.000333833  |0.0036654  |0|
