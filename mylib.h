@@ -16,6 +16,8 @@
 #include <ctime>
 #include <cstdlib>
 
+#include <list>
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -40,6 +42,8 @@ using std::to_string;
 using std::default_random_engine;
 using std::uniform_int_distribution;
 
+using std::list;
+
 
 struct studentas {
     string vardas;
@@ -56,16 +60,16 @@ struct studentas {
 };
 
 studentas ivesk();
-void spausdintiLentele(const vector<studentas>&, int pasirink);
+void spausdintiLentele(const list<studentas>& studentuSarasas, int pasirink);
 studentas nuskaityk();
 double mediana(const vector<double>& sk);
 double vidurkis(const vector<double>& pazymiai);
 
 void generavimas(int stud_sk);
-void nuskaityk2(vector<studentas>& vekt, string failopvd);
-void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai);
-void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd);
-void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas);
+void nuskaityk2(list<studentas>& vekt, string failopvd);
+void sort_galutinio(const list<studentas>& studentai, list<studentas>& vargsiukai, list<studentas>& kietakai);
+void irasymas_i_faila(const list<studentas>& studentai, const string& failo_pvd);
+void rusiuotiStudentus(list<studentas>& studentai, int rusiavimas);
 
 
 #endif // MYLIB_H_INCLUDED

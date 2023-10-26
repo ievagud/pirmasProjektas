@@ -55,7 +55,7 @@ void generavimas(int stud_sk) {
     cout << "Sugeneruota " << stud_sk << " studentu duomenys. Duomenys issaugoti faile " << failopavadinimas << endl;
 }
 
-void nuskaityk2(vector<studentas>& vekt, string failopvd) {
+void nuskaityk2(list<studentas>& vekt, string failopvd) {
 
     ifstream failas(failopvd);
     if (!failas.is_open()) {
@@ -94,7 +94,7 @@ void nuskaityk2(vector<studentas>& vekt, string failopvd) {
     }
 }
 
-void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
+void sort_galutinio(const list<studentas>& studentai, list<studentas>& vargsiukai, list<studentas>& kietakai) {
     for (const studentas& stud : studentai) {
         if (stud.rez_vid < 5) {
             vargsiukai.push_back(stud);
@@ -105,7 +105,7 @@ void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargs
 }
 
 
-void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd) {
+void irasymas_i_faila(const list<studentas>& studentai, const string& failo_pvd) {
     ofstream outputas(failo_pvd);
 
     if (!outputas.is_open()) {
@@ -136,8 +136,8 @@ bool palyginimas(const studentas& a, const studentas& b, int rusiavimas) {
     return false;
 }
 
-void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas) {
-    sort(studentai.begin(), studentai.end(), [rusiavimas](const studentas& a, const studentas& b) {
+void rusiuotiStudentus(list<studentas>& studentai, int rusiavimas) {
+    studentai.sort([rusiavimas](const studentas& a, const studentas& b) {
         return palyginimas(a, b, rusiavimas);
     });
 }

@@ -3,10 +3,10 @@
 
 int main() {
 
-    vector<studentas> studentuSarasas;
-    vector<studentas> nuskaitymui;
-    vector<studentas> vargsiukai;
-    vector<studentas> kietakai;
+    list<studentas> studentuSarasas;
+    list<studentas> nuskaitymui;
+    list<studentas> vargsiukai;
+    list<studentas> kietakai;
 
     int bandymai = 3;
     double trys_nusk = 0;

@@ -118,7 +118,7 @@ studentas ivesk(){
 }
 
 
-void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
+void spausdintiLentele(const list<studentas>& studentuSarasas, int pasirink) {
         if (pasirink == 1) {
             cout << "\n";
             cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << "\n";
@@ -146,7 +146,7 @@ void spausdintiLentele(const vector<studentas>& studentuSarasas, int pasirink) {
     cout << string(50,'-') << endl;
 }
 
-studentas nuskaityk() {
+/*studentas nuskaityk() {
     string failo_pvd;
     cout << "Iveskite failo pavadinima: ";
     cin >> failo_pvd;
@@ -207,4 +207,4 @@ studentas nuskaityk() {
         cout << left << setw(15) << student.vardas << setw(15) << student.pavarde << setw(20) << fixed << setprecision(2) << student.rez_med << setw(20) << fixed << setprecision(2) << student.rez_vid << "\n";
     }
     cout << string(70, '-') << endl;
-}
+}*/
