@@ -121,32 +121,32 @@ studentas ivesk(){
 void spausdintiLentele(const list<studentas>& studentuSarasas, int pasirink) {
         if (pasirink == 1) {
             cout << "\n";
-            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << "\n";
-            cout << string(50,'-') << endl;
+            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Adresas" << "\n";
+            cout << string(80,'-') << endl;
             for (const studentas& student : studentuSarasas) {
-                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde<< setw(5) << fixed << setprecision(2) << student.rez_vid << "\n";
+                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde << setw(15) << fixed << setprecision(2) << student.rez_vid << setw(20) << &student << "\n";
                 }
         } else if (pasirink == 2) {
             cout << "\n";
-            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << "\n";
-            cout << string(50,'-') << endl;
+            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << setw(20) << "Adresas" << "\n";
+            cout << string(80,'-') << endl;
             for (const studentas& student : studentuSarasas) {
-                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde<< setw(5) << fixed << setprecision(2) << student.rez_med << "\n";
+                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde << setw(15) << fixed << setprecision(2) << student.rez_med << setw(20) << &student << "\n";
                 }
         } else {
             cout << "Netinkamas pasirinkimas, rodomas galutinis su vidurkiu: "<< "\n";
             cout << "\n";
-            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis" << "\n";
+            cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis" << setw(20) << "Adresas" << "\n";
             cout << string(50,'-') << endl;
             for (const studentas& student : studentuSarasas) {
-                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde<< setw(5) << fixed << setprecision(2) << student.rez_vid << "\n";
+                cout << left << setw(15) << student.vardas << setw(20) << student.pavarde<< setw(5) << fixed << setprecision(2) << student.rez_vid << setw(20) << &student << "\n";
                 }
         }
 
-    cout << string(50,'-') << endl;
+    cout << string(80,'-') << endl;
 }
 
-/*studentas nuskaityk() {
+studentas nuskaityk() {
     string failo_pvd;
     cout << "Iveskite failo pavadinima: ";
     cin >> failo_pvd;
@@ -207,4 +207,4 @@ void spausdintiLentele(const list<studentas>& studentuSarasas, int pasirink) {
         cout << left << setw(15) << student.vardas << setw(15) << student.pavarde << setw(20) << fixed << setprecision(2) << student.rez_med << setw(20) << fixed << setprecision(2) << student.rez_vid << "\n";
     }
     cout << string(70, '-') << endl;
-}*/
+}
