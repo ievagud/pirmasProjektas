@@ -30,8 +30,34 @@ v0.2 atsiradę failai:
 
 v0.3 versijos programoje visur, kur buvo naudojama _std::vector<studentas>_, pakeista į _std::list<studentas>_
 
-
+TUKSTANTIS
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  0.0316878 | OOOOOO  | OOOOOOO  | 0.0009999  | 0  |0.00566663  |0|
+| std::vector <studentas>  |  0.0316878 | 0.00333063  | OOOOOOO  | 0.0009999  | 0  |0.00566663  |0|
 | std::list<studentas>  | 0.013842  | OOOOOO  | OOOOOOOO  | 0  | 0.000333833  |0.0036654  |0|
+
+10TUKST
+|         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+
+100TUKST
+|         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+
+
+MILIJONAS
+|         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+
+
+10MILIJONU
+|         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
