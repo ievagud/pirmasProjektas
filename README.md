@@ -30,34 +30,41 @@ v0.2 atsiradę failai:
 
 v0.3 versijos programoje visur, kur buvo naudojama _std::vector<studentas>_, pakeista į _std::list<studentas>_
 
-TUKSTANTIS
+Darbas su failu 1000.txt:
+
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | std::vector <studentas>  |  0.062153 | 0.00333063  | 0.00366957  | 0.0029185  | 0.000668467  | 0.00933413  |0|
-| std::list<studentas>  | 0.013842  | OOOOOO  | OOOOOOOO  | 0  | 0.000333833  |0.0036654  |0|
+| std::list<studentas>  | 0.0140934  | 0.000272933  | 0.000666233  | 0.000333333  | 0.000333633  | 0.0033353  |0|
 
-10TUKST
+Darbas su failu 10000.txt:
+
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | std::vector <studentas>  |  0.231728 | 0.0477258  | 0.0878043 | 0.0253305  | 0.0086661  | 0.0288436 | 0 |
-| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+| std::list<studentas>  | 0.930788 | 0.00217117 | 0.00166803 | 0.00200007 | 0.00567667 | 0.0160759 | 0 |
 
-100TUKST
+Darbas su failu 100000.txt:
+
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | std::vector <studentas>  |  2.38628 | 0.630392  | 0.624465 | 0.436277  | 0.073685  | 0.302921 | 0 |
-| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+| std::list<studentas>  | 5.32183 | 0.0373362 | 0.0418439 | 0.055506 | 0.0501776 | 0.179202 | 0 |
 
 
-MILIJONAS
+Darbas su failu 1000000.txt:
+
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | std::vector <studentas>  |  5.39034 | 2.07691  | 1.53819 | 1.14641  | 0.163204  | 0.708835 | 0 |
-| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+| std::list<studentas>  | 8.6426 | 0.0970542 | 0.0915231 | 0.207868 | 0.113853 | 0.370543 | 0 |
 
 
-10MILIJONU
+Darbas su failu 10000000.txt:
+
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | std::vector <studentas>  |  197.483 | 86.9633  | 76.3605 | 59.1365  | 46.8657  | 23.9039 | 0 |
-| std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
+| std::list<studentas>  | 105.305 | 6.12198 | 5.36736 | 15.4518 | 25.1268 | 18.8607 | 0 |
+
+Pagal funkcijų vykdymo laikus, naudojant std::list<studentas> programa veikia greičiau. Ypač skirtumas matosi atliekant veiksmus su didesniais failais pvz. su 10 milijonų studentų failu, kur rūšiavimas vyksta kelioliką kartų greičiau su std::list<studentas> nei su std::vector<studentas>
