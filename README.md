@@ -33,31 +33,31 @@ v0.3 versijos programoje visur, kur buvo naudojama _std::vector<studentas>_, pak
 TUKSTANTIS
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  0.0316878 | 0.00333063  | OOOOOOO  | 0.0009999  | 0  |0.00566663  |0|
+| std::vector <studentas>  |  0.062153 | 0.00333063  | 0.00366957  | 0.0029185  | 0.000668467  | 0.00933413  |0|
 | std::list<studentas>  | 0.013842  | OOOOOO  | OOOOOOOO  | 0  | 0.000333833  |0.0036654  |0|
 
 10TUKST
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::vector <studentas>  |  0.231728 | 0.0477258  | 0.0878043 | 0.0253305  | 0.0086661  | 0.0288436 | 0 |
 | std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
 
 100TUKST
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::vector <studentas>  |  2.38628 | 0.630392  | 0.624465 | 0.436277  | 0.073685  | 0.302921 | 0 |
 | std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
 
 
 MILIJONAS
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::vector <studentas>  |  5.39034 | 2.07691  | 1.53819 | 1.14641  | 0.163204  | 0.708835 | 0 |
 | std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
 
 
 10MILIJONU
 |         |  Failo nuskaitymas| Rūšiavimas pagal vardą | Rūšiavimas pagal pavardę | Rūšiavimas pagal galutinį balą | Išskirstymas į dvi kategorijas | Vargšiukų išvedimas į failą | Kietakų išvedimas į failą |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| std::vector <studentas>  |  OO | OO  | OO | OO  | OO  |OO |OO|
+| std::vector <studentas>  |  197.483 | 86.9633  | 76.3605 | 59.1365  | 46.8657  | 23.9039 | 0 |
 | std::list<studentas>  | OO  | OO | OO  | 00  | OO  |00  |OO|
