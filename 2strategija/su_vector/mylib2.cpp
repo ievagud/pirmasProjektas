@@ -94,23 +94,8 @@ void nuskaityk2(vector<studentas>& vekt, string failopvd) {
     }
 }
 
-/*void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
-    for (const studentas& stud : studentai) {
-        if (stud.rez_vid < 5) {
-            vargsiukai.push_back(stud);
-        } else {
-            kietakai.push_back(stud);
-        }
-    }
-}*/
+void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai) {
 
-void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai/*, vector<studentas>& kietakai*/) {
-    /*for (studentas stud: studentai){
-        if (rez_vid < 5){
-            vargsiukai.push_back(stud);
-            studentai.erase(stud);
-        }
-    }*/
     auto it = studentai.begin();
 
     while (it != studentai.end()) {

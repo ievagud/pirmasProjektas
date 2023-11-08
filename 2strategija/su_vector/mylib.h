@@ -64,7 +64,7 @@ double vidurkis(const vector<double>& pazymiai);
 
 void generavimas(int stud_sk);
 void nuskaityk2(vector<studentas>& vekt, string failopvd);
-void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai/*, vector<studentas>& kietakai*/);
+void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai);
 void irasymas_i_faila(const vector<studentas>& studentai, const string& failo_pvd);
 void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas);
 

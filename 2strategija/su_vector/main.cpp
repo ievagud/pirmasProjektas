@@ -55,14 +55,12 @@ int main() {
                     vargsiukai.clear();
                     kietakai.clear();
 
-                    cout << "vyksta nuskaitymas" << endl;
 
                     Timer b;
                     nuskaityk2(nuskaitymui, pvd);
                     double nusk_laikas = b.elapsed();
                     trys_nusk += nusk_laikas;
 
-                    cout << "vyksta rusiavimas" << endl;
 
                     Timer h;
                     rusiuotiStudentus(nuskaitymui, rusiavimas);
@@ -70,24 +68,21 @@ int main() {
                     tris_k_rusiuoja += rusiavimo_laikas;
 
 
-                    cout << "vyksta isskirstymas" << endl;
 
                     Timer c;
-                    sort_galutinio(nuskaitymui, vargsiukai/*, kietakai*/);
+                    sort_galutinio(nuskaitymui, vargsiukai);
                     double rus_laikas = c.elapsed();
                     trys_rus += rus_laikas;
 
                     string vargsu = "vargsiukai" + pvd;
                     string kietuku = "kietakai" + pvd;
 
-                    cout << "vyksta irasymas i faila vargsu" << endl;
 
                     Timer d;
                     irasymas_i_faila(vargsiukai, vargsu);
                     double isved_laikas1 = d.elapsed();
                     trys_v_isved += isved_laikas1;
 
-                    cout << "vyksta irasymas i faila kietu" << endl;
 
                     Timer e;
                     irasymas_i_faila(nuskaitymui, kietuku);
@@ -144,34 +139,29 @@ int main() {
                     vargsiukai.clear();
                     kietakai.clear();
 
-                    cout << "vyksta nuskaitymas" << endl;
                     Timer b;
                     nuskaityk2(nuskaitymui,z);
                     double nusk_laikas = b.elapsed();
                     trys_nusk += nusk_laikas;
 
-                    cout << "vyksta rusiavimas" << endl;
                     Timer h;
                     rusiuotiStudentus(nuskaitymui, rusiavimas2);
                     double rusiavimo_laikas = h.elapsed();
                     tris_k_rusiuoja += rusiavimo_laikas;
 
-                    cout << "vyksta isskirstymas" << endl;
                     Timer c;
-                    sort_galutinio(nuskaitymui, vargsiukai/*, kietakai*/);
+                    sort_galutinio(nuskaitymui, vargsiukai);
                     double rus_laikas = c.elapsed();
                     trys_rus += rus_laikas;
 
                     string vargsu = "vargsiukai_is_" + z;
                     string kietuku = "kietakai_is_" + z;
 
-                    cout << "vyksta irasymas i faila vargsu" << endl;
                     Timer d;
                     irasymas_i_faila(vargsiukai, vargsu);
                     double isved_laikas1 = d.elapsed();
                     trys_v_isved += isved_laikas1;
 
-                    cout << "vyksta irasymas kietu" << endl;
                     Timer e;
                     irasymas_i_faila(kietakai, kietuku);
                     double isved_laikas2 = e.elapsed();
