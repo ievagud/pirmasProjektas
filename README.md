@@ -73,3 +73,11 @@ Pagal funkcijų vykdymo laikus, naudojant std::list<studentas> programa veikia g
 
 2 strategija su vector (labai ilgai veikia studentų išskirstymas į dvi grupes, pašalinant vargšiuką iš visų studentų vektoriaus)
 <img width="852" alt="Ekrano kopija 2023-11-08 174543" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/9beebcb4-c316-4477-9a7f-30bc7dfd6083">
+
+2 strategija su list 
+<img width="808" alt="Ekrano kopija 2023-11-08 183122" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/a5e86ac9-5ad0-40cc-8b34-98206e306ec4">
+
+3strategija naudojant 1 strategija
+<img width="566" alt="Ekrano kopija 2023-11-08 192945" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/75115a78-a655-4d9b-b74c-f76aef727b21">
+<img width="595" alt="Ekrano kopija 2023-11-08 192937" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/389886c9-2307-40f7-8e79-0c64f66a71c4">
+
