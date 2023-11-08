@@ -1,6 +1,6 @@
 # pirmasProjektas
 
-**v0.1**
+# **v0.1**
 
 Programa išskaidyta į tris failus:
 
@@ -10,7 +10,7 @@ Programa išskaidyta į tris failus:
 
 
 
-**v0.2**
+# **v0.2**
 
 Programa išskaidyta į penkis failus. Failai **Mylib.h**, **Mylib.cpp**, tokie patys kaip **v0.1** versijoje.
 
@@ -26,7 +26,7 @@ v0.2 atsiradę failai:
 <img width="588" alt="Ekrano kopija 2023-10-25 131405" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/ee567ff6-2995-4114-8d12-942541916f33">
 
 
-**v0.3**
+# **v0.3**
 
 v0.3 versijos programoje visur, kur buvo naudojama _std::vector<studentas>_, pakeista į _std::list<studentas>_
 
@@ -68,3 +68,8 @@ Darbas su failu 10000000.txt:
 | std::list<studentas>  | 105.305 | 6.12198 | 5.36736 | 15.4518 | 25.1268 | 18.8607 | 0 |
 
 Pagal funkcijų vykdymo laikus, naudojant std::list<studentas> programa veikia greičiau. Ypač skirtumas matosi atliekant veiksmus su didesniais failais pvz. su 10 milijonų studentų failu, kur rūšiavimas vyksta kelioliką kartų greičiau su std::list<studentas> nei su std::vector<studentas>
+
+# v1.0
+
+2 strategija su vector (labai ilgai veikia studentų išskirstymas į dvi grupes, pašalinant vargšiuką iš visų studentų vektoriaus)
+<img width="852" alt="Ekrano kopija 2023-11-08 174543" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/9beebcb4-c316-4477-9a7f-30bc7dfd6083">
