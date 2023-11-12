@@ -70,11 +70,12 @@ Darbas su failu 10000000.txt:
 Pagal funkcijų vykdymo laikus, naudojant std::list<studentas> programa veikia greičiau. Ypač skirtumas matosi atliekant veiksmus su didesniais failais pvz. su 10 milijonų studentų failu, kur rūšiavimas vyksta kelioliką kartų greičiau su std::list<studentas> nei su std::vector<studentas>
 
 # v1.0
-1 strategija:
+
+**1 strategija:**
 
 Bendro studentai vector konteinerio skaidymas į du naujus to paties tipo konteinerius: "vargšiukų" ir "kietakų". Tokiu būdu tas pats studentas yra dvejuose konteineriuose: bendrame studentai ir viename iš suskaidytų (vargšiukai arba kietakai). Programos vykdymo laiką žiūrėti v0.3 aprašyme.
 
-2 strategija su vector:
+**2 strategija su vector:**
 
 Bendro studentų konteinerio skaidymas panaudojant tik vieną naują konteinerį: "vargšiukai". Jei studentas yra vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištrinti iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje liks vien tik kietakai. 
 
@@ -86,10 +87,7 @@ Bendro studentų konteinerio skaidymas panaudojant tik vieną naują konteinerį
 Kaip matome iš lentelės, studentų išskirstymas į dvi grupes naudojant 2 strategiją su vector tipo konteineriu yra drastiškai lėtesnis net ir su mažesniais failais, todėl su likusiais 100tūkst., 1 milijono, 10mln. failais testavimas nebebuvo vykdomas.
 
 
-
-<img width="852" alt="Ekrano kopija 2023-11-08 174543" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/9beebcb4-c316-4477-9a7f-30bc7dfd6083">
-
-2 strategija su list:
+**2 strategija su list:**
 
 Bendro studentų list konteinerio skaidymas panaudojant tik vieną naują konteinerį: "vargšiukai". Jei studentas yra vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištrinti iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje liks vien tik kietakai.
 
@@ -101,9 +99,9 @@ Bendro studentų list konteinerio skaidymas panaudojant tik vieną naują kontei
 | 1000000.txt  |0.113853|0.0325058|
 | 10000000.txt  |25.1268|17.4561|
 
-<img width="808" alt="Ekrano kopija 2023-11-08 183122" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/a5e86ac9-5ad0-40cc-8b34-98206e306ec4">
+Kaip matome iš lentelės, 2 strategija su list veikia greičiau nei 1 strategija su list.
 
-3 strategija:
+**3 strategija:**
 
 Bendro studentų vector konteinerio skaidymas panaudojant 1 strategiją įtraukiant į ją stable_partition ir copy metodus.
 
@@ -115,6 +113,7 @@ Bendro studentų vector konteinerio skaidymas panaudojant 1 strategiją įtrauki
 | 1000000.txt  |0.063204|0.0602831|
 | 10000000.txt  |46.8657|46.0965|
 
-<img width="566" alt="Ekrano kopija 2023-11-08 192945" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/75115a78-a655-4d9b-b74c-f76aef727b21">
-<img width="595" alt="Ekrano kopija 2023-11-08 192937" src="https://github.com/ievagud/pirmasProjektas/assets/144427953/389886c9-2307-40f7-8e79-0c64f66a71c4">
+Iš lentelės matosi, kad programų veikimo laikai labai panašūs.
+
+
 
