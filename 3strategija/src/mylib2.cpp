@@ -95,12 +95,12 @@ void nuskaityk2(vector<studentas>& vekt, string failopvd) {
 }
 
 void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
-    auto partition_point = stable_partition(studentai.begin(), studentai.end(), [](const studentas& stud) {
+    auto part_pt = stable_partition(studentai.begin(), studentai.end(), [](const studentas& stud) {
         return stud.rez_vid < 5.0;
     });
 
-    copy(studentai.begin(), partition_point, back_inserter(vargsiukai));
-    copy(partition_point, studentai.end(), back_inserter(kietakai));
+    copy(studentai.begin(), part_pt, back_inserter(vargsiukai));
+    copy(part_pt, studentai.end(), back_inserter(kietakai));
 }
 
 
