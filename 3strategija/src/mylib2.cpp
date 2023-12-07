@@ -15,7 +15,7 @@ void generavimas(int stud_sk) {
         } else if (stud_sk == 10000000) {
             failopavadinimas = "10000000.txt";
         } else {
-            cerr << "Nepavyko nustatyti failo dydio!" << endl;
+            cerr << "Nepavyko nustatyti failo dydÅ¾io!" << endl;
 
         }
 
@@ -94,22 +94,11 @@ void nuskaityk2(vector<studentas>& vekt, string failopvd) {
     }
 }
 
-/*void sort_galutinio(const vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
-    for (const studentas& stud : studentai) {
-        if (stud.rez_vid < 5) {
-            vargsiukai.push_back(stud);
-        } else {
-            kietakai.push_back(stud);
-        }
-    }
-}*/
-
 void sort_galutinio(vector<studentas>& studentai, vector<studentas>& vargsiukai, vector<studentas>& kietakai) {
     auto partition_point = stable_partition(studentai.begin(), studentai.end(), [](const studentas& stud) {
-        return stud.rez_vid < 5.0; // Replace 5.0 with your threshold for separating vargsiukai and kietakai
+        return stud.rez_vid < 5.0;
     });
 
-    // Copy students to vargsiukai and kietakai using std::copy
     copy(studentai.begin(), partition_point, back_inserter(vargsiukai));
     copy(partition_point, studentai.end(), back_inserter(kietakai));
 }
@@ -145,12 +134,6 @@ bool palyginimas(const studentas& a, const studentas& b, int rusiavimas) {
 
     return false;
 }
-
-/*void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas) {
-    studentai.sort([rusiavimas](const studentas& a, const studentas& b) {
-        return palyginimas(a, b, rusiavimas);
-    });
-}*/
 
 void rusiuotiStudentus(vector<studentas>& studentai, int rusiavimas) {
     sort(studentai.begin(), studentai.end(), [rusiavimas](const studentas& a, const studentas& b) {
